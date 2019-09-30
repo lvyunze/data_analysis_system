@@ -3,8 +3,9 @@
 # 单位分布
 import connect_database
 import change
-import json
 from flask import Blueprint
+from flask import jsonify
+import json
 unit_distribution_data = Blueprint("unit_distribution", __name__)
 con = connect_database.con_database('127.0.0.1', 'sa', 'root', 'analyze')
 connect = con[0]
@@ -121,10 +122,11 @@ for i in range(len(calculate)):
     calculate_dict[lst[i]] = calculate[i]
 
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
+print(calculate_dict_json)
 
 
 @unit_distribution_data.route('/unit_data/')
 def unit_data():
-    return calculate_dict_json
+    return jsonify(**calculate_dict), 230
 
 

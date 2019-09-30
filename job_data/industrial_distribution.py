@@ -137,6 +137,7 @@ for i in range(len(calculate)):
     calculate_dict[lst[i]] = calculate[i]
 
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
+print(calculate_dict_json)
 
 
 @industrial_distriburtion_data.route('/industrial_data/')

@@ -146,6 +146,7 @@ for i in range(len(lst)):
 
 
 c = json.dumps(city_data_dict, indent=4, sort_keys=True)
+print(c)
 
 
 @cities_in_province_data.route('/city_data/')

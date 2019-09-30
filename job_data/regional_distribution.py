@@ -72,6 +72,8 @@ for i in range(len(statistics_a)):
 
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
 
+print(calculate_dict_json)
+
 
 @regional_distribution_data.route('/regional_data/')
 def regional_data():
