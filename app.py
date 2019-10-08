@@ -1,5 +1,6 @@
 
 from flask import Flask
+from flask_cors import CORS
 from job_data.cities_in_province import cities_in_province_data
 from job_data.employment_area import employment_area_data
 from job_data.industrial_distribution import industrial_distriburtion_data
@@ -9,6 +10,8 @@ from job_data.unit_distribution import unit_distribution_data
 
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}}, send_wildcard=True)
+
 app.register_blueprint(cities_in_province_data)
 app.register_blueprint(employment_area_data)
 app.register_blueprint(industrial_distriburtion_data)
