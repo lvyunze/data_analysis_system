@@ -117,9 +117,22 @@ calculate = calculate()
 
 lst = ("enterprise", "primary_school_education_unit", "other_institutions", "state_organs",
        "scientific", "troops", "health_care")
+lst_num = (enterprise, primary_school_education_unit, other_institutions, state_organs, scientific,
+           troops, health_care)
+
+calculate_dict_pre = {}
+calculate_dict_num = {}
 calculate_dict = {}
 for i in range(len(calculate)):
-    calculate_dict[lst[i]] = calculate[i]
+    calculate_dict_pre[lst[i]] = calculate[i]
+
+
+for j in range(len(calculate)):
+    calculate_dict_num[lst[j]] = lst_num[j]
+
+calculate_dict["cal_pre"] = calculate_dict_pre
+calculate_dict["cal_num"] = calculate_dict_num
+
 
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
 print(calculate_dict_json)
