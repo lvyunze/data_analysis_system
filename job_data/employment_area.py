@@ -38,6 +38,7 @@ def other_area():
 other_area = other_area()
 
 
+
 def to(variate):
     variate_p = change.decimal_percent(float(change.decimal_to_two(variate/all_p)))
     return variate_p
@@ -55,6 +56,9 @@ calculate_dict = {}
 for i in range(len(calculate)):
     calculate_dict[lst[i]] = calculate[i]
 
+calculate_dict["gd_area_num"] = gd_area_num
+calculate_dict["other_area_num"] = other_area
+print(type(calculate_dict["other_area_num"]))
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
 print(calculate_dict_json)
 
