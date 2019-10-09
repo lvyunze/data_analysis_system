@@ -66,9 +66,19 @@ def statistics_a():
 
 statistics_a = statistics_a()
 lst = ("state_owned_enterprise", "mass_run_enterprises", "three_kinds_of_investment_enterprise")
+lst_num = (state_owned_enterprise, mass_run_enterprises, three_kinds_of_investment_enterprise)
 calculate_dict = {}
+cal_pre = {}
+cal_num = {}
+
 for i in range(len(statistics_a)):
-    calculate_dict[lst[i]] = statistics_a[i]
+    cal_pre[lst[i]] = statistics_a[i]
+
+for j in range(len(lst)):
+    cal_num[lst[j]] = lst_num[j]
+
+calculate_dict["cal_pre"] = cal_pre
+calculate_dict["cal_num"] = cal_num
 
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
 
