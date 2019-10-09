@@ -140,6 +140,6 @@ print(calculate_dict_json)
 
 @unit_distribution_data.route('/unit_data/')
 def unit_data():
-    return jsonify(**calculate_dict), 230
+    return calculate_dict_json
 
 
