@@ -138,15 +138,21 @@ lst_num = (education, commercial_services, software, sports, wholesale,culture_a
 calculate_dict = {}
 cal_pre = {}
 cal_num = {}
+cal_to_pre = {}
 
 for i in range(len(calculate)):
     cal_pre[lst[i]] = calculate[i]
+    cal_to_pre[lst[i]] = float(calculate[i][:-1])
+    print(float(calculate[i][:-1]))
+
 
 for j in range(len(lst)):
     cal_num[lst[j]] = lst_num[j]
 
+
 calculate_dict["cal_pre"] = cal_pre
 calculate_dict["cal_num"] = cal_num
+calculate_dict["cal_to_pre"] = cal_to_pre
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
 print(calculate_dict_json)
 
