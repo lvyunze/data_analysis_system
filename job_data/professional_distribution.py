@@ -134,10 +134,20 @@ calculate = calculate()
 lst = ("teaching_staff", "engineering_technicians", "business_service_workers", "worker", "conomic_personnel",
        "financial_service", "literature_art", "other",
        "press_publications", "civil_servant")
+lst_num = (teaching_staff, engineering_technicians, business_service_workers, worker, conomic_personnel,
+           financial_service, literature_art, other, press_publications, civil_servant)
 calculate_dict = {}
-for i in range(len(calculate)):
-    calculate_dict[lst[i]] = calculate[i]
+cal_num = {}
+cal_pre = {}
 
+for i in range(len(calculate)):
+    cal_pre[lst[i]] = calculate[i]
+
+for j in range(len(lst)):
+    cal_num[lst[j]] = lst_num[j]
+
+calculate_dict["cal_pre"] = cal_pre
+calculate_dict["cal_num"] = cal_num
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
 
 print(calculate_dict_json)

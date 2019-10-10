@@ -134,16 +134,24 @@ def statistics():
 
 lst = ('guangzhou', 'zhanjiang', 'shenzhen', 'fosan', 'dongguan', 'zhongshan', 'maoming', 'jiangmen', 'yangjiang',
        'zhaoqing')
+lst_num = (guangzhou, zhanjiang, shenzhen, fosan, dongguan, zhongshan, maoming, jiangmen, yangjiang,
+           zhaoqing)
 
 statistics = statistics()
 city_data_dict = {}
-print(statistics[0])
-city_data_dict["guangzhou"] = statistics[0]
+city_pre = {}
+city_num = {}
 
 
 for i in range(len(lst)):
-    city_data_dict[lst[i]] = statistics[i]
+    city_pre[lst[i]] = statistics[i]
 
+for j in range(len(lst_num)):
+    city_num[lst[j]] = lst_num[j]
+
+
+city_data_dict["city_pre"] = city_pre
+city_data_dict["city_num"] = city_num
 
 c = json.dumps(city_data_dict, indent=4, sort_keys=True)
 print(c)
