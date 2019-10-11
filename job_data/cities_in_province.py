@@ -141,10 +141,12 @@ statistics = statistics()
 city_data_dict = {}
 city_pre = {}
 city_num = {}
-
+city_to_pre = {}
 
 for i in range(len(lst)):
     city_pre[lst[i]] = statistics[i]
+    city_to_pre[lst[i]] = float(statistics[i][:-1])
+
 
 for j in range(len(lst_num)):
     city_num[lst[j]] = lst_num[j]
@@ -152,7 +154,7 @@ for j in range(len(lst_num)):
 
 city_data_dict["city_pre"] = city_pre
 city_data_dict["city_num"] = city_num
-
+city_data_dict["city_to_pre"] = city_to_pre
 c = json.dumps(city_data_dict, indent=4, sort_keys=True)
 print(c)
 
