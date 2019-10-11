@@ -4,7 +4,6 @@
 import connect_database
 import change
 from flask import Blueprint
-from flask import jsonify
 import json
 unit_distribution_data = Blueprint("unit_distribution", __name__)
 con = connect_database.con_database('127.0.0.1', 'sa', 'root', 'analyze')
@@ -123,15 +122,17 @@ lst_num = (enterprise, primary_school_education_unit, other_institutions, state_
 calculate_dict_pre = {}
 calculate_dict_num = {}
 calculate_dict = {}
+calculate_to_pre = {}
 for i in range(len(calculate)):
     calculate_dict_pre[lst[i]] = calculate[i]
-
+    calculate_to_pre[lst[i]] = float(calculate[i][:-1])
 
 for j in range(len(calculate)):
     calculate_dict_num[lst[j]] = lst_num[j]
 
 calculate_dict["cal_pre"] = calculate_dict_pre
 calculate_dict["cal_num"] = calculate_dict_num
+calculate_dict["calculate_to_pre"] = calculate_to_pre
 
 
 calculate_dict_json = json.dumps(calculate_dict, indent=4, sort_keys=True)
