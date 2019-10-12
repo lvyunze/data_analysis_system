@@ -105,11 +105,13 @@ other = other()
 press_publications = press_publications()
 civil_servant = civil_servant()
 
+all_pre = teaching_staff+engineering_technicians+business_service_workers+worker+\
+          conomic_personnel+financial_service+literature_art+other+press_publications+civil_servant
 all_p = all_regional()
 
 
 def to(variate):
-    variate_p = change.decimal_percent(float(change.decimal_to_two(variate/all_p)))
+    variate_p = change.decimal_percent(float(change.decimal_to_two(variate/all_pre)))
     return variate_p
 
 

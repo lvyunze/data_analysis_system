@@ -45,14 +45,14 @@ def three_kinds_of_investment_enterprise():
 state_owned_enterprise = state_owned_enterprise()
 mass_run_enterprises = mass_run_enterprises()
 three_kinds_of_investment_enterprise = three_kinds_of_investment_enterprise()
-
+all_p = state_owned_enterprise+mass_run_enterprises+three_kinds_of_investment_enterprise
 
 # 所有
 all_regional = all_regional()
 
 
 def to(variate):
-    variate_p = change.decimal_percent(float(change.decimal_to_two(variate/all_regional)))
+    variate_p = change.decimal_percent(float(change.decimal_to_two(variate/all_p)))
     return variate_p
 
 
